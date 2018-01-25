@@ -33,6 +33,13 @@ RUN    cd /home/gap/inst/gap \
     && ../bin/BuildPackages.sh \
     && git clone https://github.com/gap-packages/uuid.git \
     && git clone https://github.com/gap-packages/crypting.git \
+    && rm -rf ZeroMQ* \
+    && git clone https://github.com/gap-packages/ZeroMQInterface.git \
+    && cd ZeroMQInterface \
+    && ./autogen.sh \
+    && ./configure \
+    && make \
+    && cd .. \
     && cd crypting \
     && ./autogen.sh \
     && ./configure \
