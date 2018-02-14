@@ -1,6 +1,6 @@
 FROM ubuntu:artful
 
-MAINTAINER Sebastian Gutsche <sebastian.gutsche@gmail.com>
+MAINTAINER Markus Pfeiffer <markus.pfeiffer@st-andrews.ac.uk>
 
 RUN apt-get update -qq \
     && apt-get -qq install -y build-essential m4 libreadline6-dev libncurses5-dev wget unzip libgmp3-dev cmake git python-pip \
@@ -48,6 +48,8 @@ RUN    cd /home/gap/inst/gap \
     && git clone https://github.com/gap-packages/JupyterKernel.git \
     && cd JupyterKernel \
     && python setup.py install --user \
+    && cd .. \
+    && git clone https://github.com/gap-packages/anatph \
     && cd ../.. \
     && cp bin/gap.sh bin/gap
 
