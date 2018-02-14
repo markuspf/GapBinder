@@ -50,7 +50,7 @@ RUN    cd /home/gap/inst/gap \
     && python setup.py install --user \
     && cd .. \
     && git clone https://github.com/gap-packages/anatph \
-    && cd ../.. \
+    && cd .. \
     && cp bin/gap.sh bin/gap
 
 RUN jupyter serverextension enable --py jupyterlab --user
